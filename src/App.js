@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <Tasks tasks={this.state.tasks}/> {/* aqui traigo los valores del state */}
+        <Tasks tasks={this.state.tasks}/> {/* aqui traigo los valores del state para usarlos despues*/}
       </div>
     )
   }
