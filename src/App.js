@@ -12,7 +12,7 @@ import Tasks from './components/Tasks';
 class App extends Component {
   state = {
     tasks: tasks
-    // tasks // puede ser solo task xq se llama igual...
+    // tasks // puede ser solo task xq se llama igual
   }
 
   render() {
