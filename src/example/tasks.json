@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title":"Tarea cero",
+    "descripcion":"Es la tarea base",
+    "done": false
+  },
+  {
+    "id": 1,
+    "title":"Tarea uno",
+    "descripcion":"Es la primera tarea",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title":"Tarea dos",
+    "descripcion":"Es la segunda tarea",
+    "done": true
+  },
+  {
+    "id": 3,
+    "title":"Tarea tres",
+    "descripcion":"Es la tercera tarea",
+    "done": false
+  }
+]
