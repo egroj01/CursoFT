@@ -20,7 +20,7 @@ class Task extends Component {
         {task.title} -
         {task.description} -
         {this.props.task.id} -
-        <input type="checkbox" />
+        <input type="checkbox" onChange={this.props.checkTask.bind(this, task.id)}/>
         <button
           style={btnDelete}
           onClick={this.props.deleteTask.bind(this, task.id)} /* estoy recibiendo el method deleteTask como props y bindiando el id */

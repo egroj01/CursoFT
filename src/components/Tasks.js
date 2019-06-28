@@ -11,6 +11,7 @@ class Tasks extends Component {
       task={task}
       key={task.id}
       deleteTask={this.props.deleteTask} // aqui le estoy pasando el metodo como una props que declare en app.js
+      checkTask={this.props.checkTask}
     />);
   }
 }

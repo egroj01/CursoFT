@@ -9,6 +9,7 @@ import tasks from './example/tasks.json';
 // My components
 import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm'
+import Posts from './components/Posts';
 class App extends Component {
   state = {
     tasks: tasks
@@ -33,14 +34,15 @@ class App extends Component {
     this.setState({tasks: newTasks})
     console.log('Elimanada la tareade de id:', id)
   }
+
   checkTask = id => {
-    const newTask = this.state.map(task => {
+    const newTasks = this.state.tasks.map(task => {
       if(task.id === id) {
         task.done = !task.done
       }
       return task;
     });
-    this.setState({tasks: newTask})
+    this.setState({tasks: newTasks})
   }
 
   render() {
@@ -49,7 +51,10 @@ class App extends Component {
         <TaskForm addTask={this.addTask}/>
         <Tasks
           tasks={this.state.tasks}
-          deleteTask={this.deleteTask}/> {/* aqui traigo los valores del state y tambien recibe el metodo deleteTask */}
+          deleteTask={this.deleteTask}
+          checkTask={this.checkTask}
+          /> {/* aqui traigo los valores del state y tambien recibe el metodo deleteTask */}
+          <Posts />
       </div>
     )
   }
