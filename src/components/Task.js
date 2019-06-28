@@ -18,10 +18,14 @@ class Task extends Component {
       <p style={this.StyleCompleted()}>
         {task.done}
         {task.title} -
-        {task.descripcion} -
+        {task.description} -
         {this.props.task.id} -
         <input type="checkbox" />
-        <button style={btnDelete}>
+        <button
+          style={btnDelete}
+          onClick={this.props.deleteTask.bind(this, task.id)} /* estoy recibiendo el method deleteTask como props y bindiando el id */
+          title="Elimina la tarea"
+        >
           X
         </button>
       </p>

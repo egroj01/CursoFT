@@ -15,11 +15,41 @@ class App extends Component {
     // tasks // puede ser solo task xq se llama igual
   }
 
+  addTask = (title, description) => {
+    const newTask = {
+      title: title,  //puedo hacerlo asi title: title
+      description: description, // //puedo hacerlo asi description: description
+      id: this.state.tasks.length // Estoy usando del estado su longitud
+    }
+    console.log('Creada nueva tarea de id:', newTask.id)
+    this.setState({
+      tasks: [...this.state.tasks, newTask] // Estoy por decirlo asi concatenandole al estado lo nuevo que le pasaré
+    })
+  }
+
+  // Este metodo se lo voy a pasar al component TASKS que a su vez lo pasra al subcomponente TASK
+  deleteTask = (id) => {
+    const newTasks = this.state.tasks.filter(task => task.id !== id); //Desde el estado de las tareas voy a filtrarpor cada tara que vas a recorrer regresa
+    this.setState({tasks: newTasks})
+    console.log('Elimanada la tareade de id:', id)
+  }
+  checkTask = id => {
+    const newTask = this.state.map(task => {
+      if(task.id === id) {
+        task.done = !task.done
+      }
+      return task;
+    });
+    this.setState({tasks: newTask})
+  }
+
   render() {
     return(
       <div>
-        <TaskForm />
-        <Tasks tasks={this.state.tasks}/> {/* aqui traigo los valores del state para usarlos despues*/}
+        <TaskForm addTask={this.addTask}/>
+        <Tasks
+          tasks={this.state.tasks}
+          deleteTask={this.deleteTask}/> {/* aqui traigo los valores del state y tambien recibe el metodo deleteTask */}
       </div>
     )
   }

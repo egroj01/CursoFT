@@ -8,18 +8,20 @@ export default class TaskForm extends Component {
 
   onSubmit = e => {
 //    console.log(this.state)
-    e.preventDefault();
+    this.props.addTask(this.state.title, this.state.description)
+    e.preventDefault(); // previene el comportamiento por defecto de actualizar
   }
 
   onChange = e => {
 //    console.log(e.target.name, e.target.value)
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value // uso el nombre y el valor del formulario
     })
   }
 
 
   render() {
+    // console.log(this.props)
     return (
       <form onSubmit={this.onSubmit}>
         <input
