@@ -6,8 +6,8 @@ class Task extends Component {
   StyleCompleted() {
       return  {
       fontSize: '20px',
-      color: this.props.task.done ? 'blue' : 'tomato',
-      textDecoration: this.props.task.done ? 'line-through' : 'none',
+      color: this.props.task.completed ? 'blue' : 'tomato',
+      textDecoration: this.props.task.completed ? 'line-through' : 'none',
     }
   }
 
@@ -16,7 +16,7 @@ class Task extends Component {
 
     return(
       <p style={this.StyleCompleted()}>
-        {task.done}
+        {task.completed}
         {task.title} -
         {task.description} -
         {this.props.task.id} -

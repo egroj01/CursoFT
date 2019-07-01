@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 
 // styles
 import './App.css';
@@ -38,7 +44,7 @@ class App extends Component {
   checkTask = id => {
     const newTasks = this.state.tasks.map(task => {
       if(task.id === id) {
-        task.done = !task.done
+        task.completed = !task.completed
       }
       return task;
     });
@@ -48,13 +54,30 @@ class App extends Component {
   render() {
     return(
       <div>
-        <TaskForm addTask={this.addTask}/>
-        <Tasks
-          tasks={this.state.tasks}
-          deleteTask={this.deleteTask}
-          checkTask={this.checkTask}
-          /> {/* aqui traigo los valores del state y tambien recibe el metodo deleteTask */}
-          <Posts />
+        <Router>
+          <Link to="/"> Home  </Link>
+          <Link to="/posts">  Posts </Link>
+          <Route exact path="/" render={() => {
+            return (
+              <div>
+                <TaskForm addTask={this.addTask}/>
+                {/* Aqui traigo los valores del state y tambien recibe el metodo deleteTask */}
+                <Tasks
+                  tasks={this.state.tasks}
+                  deleteTask={this.deleteTask}
+                  checkTask={this.checkTask}
+                  />
+              </div>
+              )}}>
+          </Route>
+          <Route path="/posts" render={() => {
+            return (
+            <did>
+              <Posts />
+            </did>
+            )}}>
+          </Route>
+        </Router>
       </div>
     )
   }

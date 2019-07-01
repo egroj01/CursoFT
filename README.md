@@ -43,8 +43,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Fazt
-# Dynamic Data
+# Fazt
+## Dynamic Data
 ** 2:53:43 `Fetching Data` / ** https://youtu.be/zIY87vU33aA?t=10422
 
-
+## Routing in React
+**  3:07:25 `React Router` / **  (https://youtu.be/zIY87vU33aA?t=11245)
